@@ -1,3 +1,4 @@
+import Association from './components/Association'
 import CarouselSection from './components/Carousel/CarouselSection'
 import Clients from './components/Clients'
 import Navbar from './components/Navbar'
@@ -8,6 +9,7 @@ function App() {
             <Navbar />
             <CarouselSection />
             <Clients /> 
+            <Association />
         </main>
     )
 }
