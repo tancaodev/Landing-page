@@ -1,13 +1,14 @@
+import CarouselSection from './components/Carousel/CarouselSection'
+import Clients from './components/Clients'
+import Navbar from './components/Navbar'
+
 function App() {
     return (
-        <div className=''>
-            Hello World!
-            <p>
-                <h1>
-                    <h2></h2>
-                </h1>
-            </p>
-        </div>
+        <main>
+            <Navbar />
+            <CarouselSection />
+            <Clients /> 
+        </main>
     )
 }
 
