@@ -3,7 +3,7 @@ import { pageLogo } from '../utils'
 
 const Clients = () => {
     return (
-        <div className='w-screen bg-white mt-10 enable-animation'>
+        <div className='w-full bg-white mt-10 enable-animation'>
             <div className='text-center mx-40'>
                 <h1 className='text-headline-2 text-d-grey'>Our Clients</h1>
                 <p className='mt-2 text-body-regular-2 text-grey'>
