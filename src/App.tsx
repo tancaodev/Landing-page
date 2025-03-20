@@ -1,14 +1,17 @@
-import Association from './components/Association/Association'
-import BlogSection from './components/Blog'
-import CarouselSection from './components/Carousel/CarouselSection'
-import Clients from './components/Clients'
-import CustomerSection from './components/Customer'
-import Footer from './components/Footer'
-import GetADemo from './components/GetADemo'
-import LearnmoreSection from './components/Learnmore'
+import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
-import RatingSection from './components/Rating'
+import CarouselSection from './components/Carousel/CarouselSection'
 import { firstLearnMoreSection, secondLearnMoreSection } from './constants'
+
+// Lazy load các components không cần thiết ngay lập tức
+const Association = lazy(() => import('./components/Association/Association'))
+const BlogSection = lazy(() => import('./components/Blog'))
+const Clients = lazy(() => import('./components/Clients'))
+const CustomerSection = lazy(() => import('./components/Customer'))
+const Footer = lazy(() => import('./components/Footer'))
+const GetADemo = lazy(() => import('./components/GetADemo'))
+const LearnmoreSection = lazy(() => import('./components/Learnmore'))
+const RatingSection = lazy(() => import('./components/Rating'))
 
 function App() {
     return (
@@ -16,14 +19,16 @@ function App() {
             <Navbar />
             <CarouselSection />
             <Clients />
-            <Association />
-            <LearnmoreSection data={firstLearnMoreSection} />
-            <RatingSection />
-            <LearnmoreSection data={secondLearnMoreSection} />
-            <CustomerSection />
-            <BlogSection />
-            <GetADemo />
-            <Footer />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Association />
+                <LearnmoreSection data={firstLearnMoreSection} />
+                <RatingSection />
+                <LearnmoreSection data={secondLearnMoreSection} />
+                <CustomerSection />
+                <BlogSection />
+                <GetADemo />
+                <Footer />
+            </Suspense>
         </main>
     )
 }
