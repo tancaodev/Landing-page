@@ -15,10 +15,10 @@ const AnimatedCounter = ({ from, to }: AnimatedCounterProps) => {
     // const springNumberCount = useSpring(0, { bounce: 0, duration: 2000 })
 
     const springNumberCount = useSpring(from, {
-        stiffness: 50, // Lower stiffness makes it more "stretchy"
-        damping: 30, // Higher damping slows it down at the end
+        stiffness: 70, // Lower stiffness makes it more "stretchy"
+        damping: 20, // Higher damping slows it down at the end
         mass: 1.5, // Higher mass makes it feel "heavier" near the end
-        duration: 1000 // Slightly longer duration
+        duration: 3000 // Slightly longer duration
     })
 
     useEffect(() => {

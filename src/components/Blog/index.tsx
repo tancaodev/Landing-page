@@ -3,7 +3,7 @@ import BlogCard from './BlogCard'
 
 const BlogSection = () => {
     return (
-        <div className='w-full bg-white mt-12'>
+        <div className='w-full bg-white mt-12 pb-24'>
             <div className='mx-36'>
                 <div className='text-center mx-5'>
                     <h1 className='text-headline-2 text-d-grey'>Caring is the new marketing</h1>

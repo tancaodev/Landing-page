@@ -8,13 +8,13 @@ type ButtonTextProps = {
 const ArrowIcon = ({ isHovered }: { isHovered: boolean }) => {
     return (
         <motion.svg
-            width={isHovered ? '25' : '15'}
+            width='25'
             height='8'
             viewBox='0 0 14 8'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
             className='inline-block'
-            animate={{ width: isHovered ? 25 : 15 }}
+            animate={{ width: isHovered ? 25 : 15, x: isHovered ? 5 : 0 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
         >
             <path
@@ -32,11 +32,14 @@ const AnimatedButton = ({ text, className }: ButtonTextProps) => {
 
     return (
         <button
-            className={`text-headline-4 text-primary items-center gap-2 cursor-pointer ${className ? className : ''}`}
+            className={`text-headline-4 text-primary inline-flex items-center cursor-pointer ${className ? className : ''}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {text} <ArrowIcon isHovered={isHovered} />
+            <span className='mr-2'>{text}</span>
+            <div className='w-[25px] flex items-center justify-start'>
+                <ArrowIcon isHovered={isHovered} />
+            </div>
         </button>
     )
 }

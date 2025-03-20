@@ -1,4 +1,5 @@
 import logo from '/assets/images/logo.svg'
+import whiteLogo from '/assets/images/logo-white.png'
 import heroImage from '/assets/images/Illustration.png'
 import clientImage1 from '/assets/images/clients/client1.png'
 import clientImage2 from '/assets/images/clients/client2.png'
@@ -50,3 +51,5 @@ export const userImage = timSmith
 export const blogImage1 = blog1
 export const blogImage2 = blog2
 export const blogImage3 = blog3
+
+export const footerLogo = whiteLogo

@@ -3,6 +3,8 @@ import BlogSection from './components/Blog'
 import CarouselSection from './components/Carousel/CarouselSection'
 import Clients from './components/Clients'
 import CustomerSection from './components/Customer'
+import Footer from './components/Footer'
+import GetADemo from './components/GetADemo'
 import LearnmoreSection from './components/Learnmore'
 import Navbar from './components/Navbar'
 import RatingSection from './components/Rating'
@@ -20,6 +22,8 @@ function App() {
             <LearnmoreSection data={secondLearnMoreSection} />
             <CustomerSection />
             <BlogSection />
+            <GetADemo />
+            <Footer />
         </main>
     )
 }
