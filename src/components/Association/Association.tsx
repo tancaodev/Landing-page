@@ -1,4 +1,4 @@
-import { associateSection } from '~/constants'
+import { associates } from '~/constants'
 import CardAssociate from './CardAssociate'
 
 const Association = () => {
@@ -12,7 +12,7 @@ const Association = () => {
             </div>
 
             <div className='flex justify-between mt-4 mx-36'>
-                {associateSection.map((card) => (
+                {associates.items.map((card) => (
                     <CardAssociate key={card.id} data={card} />
                 ))}
             </div>

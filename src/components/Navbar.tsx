@@ -1,4 +1,4 @@
-import { navLists } from '../constants'
+import { navigation } from '../constants'
 import { pageLogo } from '../utils'
 
 const Navbar = () => {
@@ -8,8 +8,10 @@ const Navbar = () => {
                 <img src={pageLogo} alt='Logo' width={155} height={25} />
 
                 <div className='flex flex-1 justify-center gap-12 max-sm:hidden'>
-                    {navLists.map((nav) => (
-                        <div key={nav} className='text-body-regular-2 hover:text-body-md-2 transition-all'>{nav}</div>
+                    {navigation.navLists.map((nav) => (
+                        <div key={nav} className='text-body-regular-2 hover:text-body-md-2 transition-all'>
+                            {nav}
+                        </div>
                     ))}
                 </div>
 

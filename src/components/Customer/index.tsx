@@ -1,4 +1,4 @@
-import { clientsSection } from '~/constants'
+import { clients } from '~/constants'
 import { userImage } from '~/utils'
 import AnimatedButton from '../ArrowButton'
 
@@ -30,7 +30,7 @@ const CustomerSection = () => {
 
                     <div className='flex mt-8 gap-8'>
                         <div className='flex gap-10'>
-                            {clientsSection.slice(0, 6).map((img, index) => (
+                            {clients.logos.slice(0, 6).map((img, index) => (
                                 <img key={index} src={img} alt={`Client ${index}`} />
                             ))}
                         </div>

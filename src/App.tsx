@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import CarouselSection from './components/Carousel/CarouselSection'
-import { firstLearnMoreSection, secondLearnMoreSection } from './constants'
+import { sections } from './constants'
 
 // Lazy load các components không cần thiết ngay lập tức
 const Association = lazy(() => import('./components/Association/Association'))
@@ -21,9 +21,9 @@ function App() {
             <Clients />
             <Suspense fallback={<div>Loading...</div>}>
                 <Association />
-                <LearnmoreSection data={firstLearnMoreSection} />
+                <LearnmoreSection data={sections.firstLearnMore} />
                 <RatingSection />
-                <LearnmoreSection data={secondLearnMoreSection} />
+                <LearnmoreSection data={sections.secondLearnMore} />
                 <CustomerSection />
                 <BlogSection />
                 <GetADemo />

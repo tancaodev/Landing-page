@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '~/components/ui/carousel'
-import { highlightsCarousel } from '~/constants'
+import { carousel } from '~/constants'
 import Autoplay from 'embla-carousel-autoplay'
 
 const CarouselSection = () => {
@@ -34,7 +34,7 @@ const CarouselSection = () => {
     return (
         <Carousel setApi={setCarouselApi} className='w-full bg-silver' plugins={[plugin.current]}>
             <CarouselContent className='w-full h-5/6 ml-0'>
-                {highlightsCarousel.map((carousel) => (
+                {carousel.highlights.map((carousel) => (
                     <CarouselItem key={carousel.id} className='flex px-36 py-24 justify-between items-center'>
                         <div>
                             <h1 className='text-headline-1 text-d-grey'>{carousel.title.black}</h1>

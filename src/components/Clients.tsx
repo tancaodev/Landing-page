@@ -1,4 +1,4 @@
-import { clientsSection } from '~/constants'
+import { clients } from '~/constants'
 import { pageLogo } from '../utils'
 
 const Clients = () => {
@@ -12,9 +12,9 @@ const Clients = () => {
             </div>
             <div className='flex gap-36 mx-36 mt-4 marquee fadeout-horizontal'>
                 <div className='marquee__content'>
-                    {clientsSection.concat(clientsSection).map((img, index) => (
+                    {clients.logos.concat(clients.logos).map((img, index) => (
                         <div key={`client-${index}`} className='marquee__item'>
-                            <img src={img || pageLogo} alt={`Client ${(index % clientsSection.length) + 1}`} />
+                            <img src={img || pageLogo} alt={`Client ${(index % clients.logos.length) + 1}`} />
                         </div>
                     ))}
                 </div>
