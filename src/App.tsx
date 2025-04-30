@@ -1,35 +1,43 @@
-import { lazy, Suspense } from 'react'
-import Navbar from './components/Navbar'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Association from './components/Association/Association'
+import BlogSection from './components/Blog'
 import CarouselSection from './components/Carousel/CarouselSection'
+import Clients from './components/Clients'
+import CustomerSection from './components/Customer'
+import Footer from './components/Footer'
+import GetADemo from './components/GetADemo'
+import LearnmoreSection from './components/Learnmore'
+import Navbar from './components/Navbar'
+import NotFound from './components/NotFound'
+import RatingSection from './components/Rating'
 import { sections } from './constants'
 
-// Lazy load các components không cần thiết ngay lập tức
-const Association = lazy(() => import('./components/Association/Association'))
-const BlogSection = lazy(() => import('./components/Blog'))
-const Clients = lazy(() => import('./components/Clients'))
-const CustomerSection = lazy(() => import('./components/Customer'))
-const Footer = lazy(() => import('./components/Footer'))
-const GetADemo = lazy(() => import('./components/GetADemo'))
-const LearnmoreSection = lazy(() => import('./components/Learnmore'))
-const RatingSection = lazy(() => import('./components/Rating'))
-
-function App() {
+const HomePage = () => {
     return (
         <main>
             <Navbar />
             <CarouselSection />
             <Clients />
-            <Suspense fallback={<div>Loading...</div>}>
-                <Association />
-                <LearnmoreSection data={sections.firstLearnMore} />
-                <RatingSection />
-                <LearnmoreSection data={sections.secondLearnMore} />
-                <CustomerSection />
-                <BlogSection />
-                <GetADemo />
-                <Footer />
-            </Suspense>
+            <Association />
+            <LearnmoreSection data={sections.firstLearnMore} />
+            <RatingSection />
+            <LearnmoreSection data={sections.secondLearnMore} />
+            <CustomerSection />
+            <BlogSection />
+            <GetADemo />
+            <Footer />
         </main>
+    )
+}
+
+function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='*' element={<NotFound />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 
