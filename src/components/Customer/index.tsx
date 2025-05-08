@@ -5,13 +5,19 @@ import AnimatedButton from '../ArrowButton'
 const CustomerSection = () => {
     return (
         <div className='w-full bg-silver mt-12'>
-            <div className='flex items-center py-8 mx-36 gap-[78px]'>
-                <div className='block min-w-fit'>
-                    <img src={userImage} alt='User image' width={326} height={326} className='object-contain' />
+            <div className='flex flex-col lg:flex-row items-center py-8 px-4 md:px-8 lg:mx-36 gap-8 lg:gap-[78px]'>
+                <div className='block w-full lg:min-w-fit'>
+                    <img
+                        src={userImage}
+                        alt='User image'
+                        width={326}
+                        height={326}
+                        className='w-full max-w-[326px] mx-auto lg:mx-0 object-contain'
+                    />
                 </div>
 
-                <div>
-                    <p className='text-body-regular-2 text-grey'>
+                <div className='w-full'>
+                    <p className='text-sm md:text-base lg:text-body-regular-2 text-grey'>
                         Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus
                         tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in,
                         gravida enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie,
@@ -22,16 +28,16 @@ const CustomerSection = () => {
                     </p>
 
                     <div className='mt-4'>
-                        <h1 className='text-headline-4 text-primary'>Tim Smith</h1>
-                        <p className='text-body-regular-2 text-light-grey mt-2'>
+                        <h1 className='text-xl md:text-2xl lg:text-headline-4 text-primary'>Tim Smith</h1>
+                        <p className='text-sm md:text-base lg:text-body-regular-2 text-light-grey mt-2'>
                             British Dragon Boat Racing Association
                         </p>
                     </div>
 
-                    <div className='flex mt-8 gap-8'>
-                        <div className='flex gap-10'>
+                    <div className='flex flex-col lg:flex-row mt-8 gap-8'>
+                        <div className='grid grid-cols-3 md:grid-cols-6 gap-4 lg:gap-10'>
                             {clients.logos.slice(0, 6).map((img, index) => (
-                                <img key={index} src={img} alt={`Client ${index}`} />
+                                <img key={index} src={img} alt={`Client ${index}`} className='w-full h-auto' />
                             ))}
                         </div>
 

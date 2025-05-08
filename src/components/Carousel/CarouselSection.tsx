@@ -35,14 +35,31 @@ const CarouselSection = () => {
         <Carousel setApi={setCarouselApi} className='w-full bg-silver' plugins={[plugin.current]}>
             <CarouselContent className='w-full h-5/6 ml-0'>
                 {carousel.highlights.map((carousel) => (
-                    <CarouselItem key={carousel.id} className='flex px-36 py-24 justify-between items-center'>
-                        <div>
-                            <h1 className='text-headline-1 text-d-grey'>{carousel.title.black}</h1>
-                            <h1 className='text-headline-1 text-primary'>{carousel.title.green}</h1>
-                            <p className='text-body-regular-2 text-grey mt-4'>{carousel.description}</p>
-                            <button className='btn-primary mt-8'>{carousel.button}</button>
+                    <CarouselItem
+                        key={carousel.id}
+                        className='flex flex-col lg:flex-row px-4 md:px-8 lg:px-36 py-12 lg:py-24 justify-between items-center'
+                    >
+                        <div className='text-center lg:text-left mb-8 lg:mb-0'>
+                            <h1 className='text-3xl md:text-4xl lg:text-headline-1 text-d-grey'>
+                                {carousel.title.black}
+                            </h1>
+                            <h1 className='text-3xl md:text-4xl lg:text-headline-1 text-primary'>
+                                {carousel.title.green}
+                            </h1>
+                            <p className='text-base md:text-lg lg:text-body-regular-2 text-grey mt-4 max-w-[600px] mx-auto lg:mx-0'>
+                                {carousel.description}
+                            </p>
+                            <button className='btn-primary mt-8 px-6 py-3 text-sm md:text-base'>
+                                {carousel.button}
+                            </button>
                         </div>
-                        <img src={carousel.image} alt={`Image` + carousel.id} />
+                        <div className='w-full lg:w-auto'>
+                            <img
+                                src={carousel.image}
+                                alt={`Image ${carousel.id}`}
+                                className='w-full max-w-[300px] md:max-w-[400px] lg:max-w-none mx-auto'
+                            />
+                        </div>
                     </CarouselItem>
                 ))}
             </CarouselContent>
@@ -52,7 +69,9 @@ const CarouselSection = () => {
                     <button
                         key={index}
                         onClick={() => scrollToIndex(index)}
-                        className={`w-[10px] h-[10px] rounded-full ${currentIndex === index ? 'bg-primary' : 'bg-primary opacity-30'}`}
+                        className={`w-2 h-2 md:w-[10px] md:h-[10px] rounded-full ${
+                            currentIndex === index ? 'bg-primary' : 'bg-primary opacity-30'
+                        }`}
                     />
                 ))}
             </div>

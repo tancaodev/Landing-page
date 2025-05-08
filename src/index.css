@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @plugin 'tailwindcss-animate';
 @custom-variant dark (&:is(.dark *));
-@import "tailwindcss";
+@import 'tailwindcss';
 
 body {
     margin: 0;
@@ -15,7 +15,7 @@ body {
 
 @theme {
     /* Typography */
-    --font-inter: "Inter", sans-serif;
+    --font-inter: 'Inter', sans-serif;
 
     --text-headline-1: 4rem;
     --text-headline-1--line-height: 4.75rem;
@@ -67,33 +67,33 @@ body {
 
     /* Theme Color */
     --color-neutral-black: #263238;
-    --color-d-grey: #4D4D4D;
+    --color-d-grey: #4d4d4d;
     --color-grey: #717171;
-    --color-light-grey: #89939E;
-    --color-grey-blue: #ABBED1;
-    --color-silver: #F5F7FA;
-    --color-white: #FFFFFF;
+    --color-light-grey: #89939e;
+    --color-grey-blue: #abbed1;
+    --color-silver: #f5f7fa;
+    --color-white: #ffffff;
 
-    --color-primary: #4CAF4F;
+    --color-primary: #4caf4f;
     --color-secondary: #263238;
 
-    --color-info: #2194F3;
+    --color-info: #2194f3;
 
-    --color-shade1: #43A046;
-    --color-shade2: #388E3B;
-    --color-shade3: #237D31;
-    --color-shade4: #1B5E1F;
-    --color-shade5: #103E13;
+    --color-shade1: #43a046;
+    --color-shade2: #388e3b;
+    --color-shade3: #237d31;
+    --color-shade4: #1b5e1f;
+    --color-shade5: #103e13;
 
-    --color-tint1: #66BB69;
-    --color-tint2: #81C784;
-    --color-tint3: #A5D6A7;
-    --color-tint4: #C8E6C9;
-    --color-tint5: #E8F5E9;
+    --color-tint1: #66bb69;
+    --color-tint2: #81c784;
+    --color-tint3: #a5d6a7;
+    --color-tint4: #c8e6c9;
+    --color-tint5: #e8f5e9;
 
-    --color-warning: #FBC02D;
-    --color-error: #E53835;
-    --color-success: #2E7D31;
+    --color-warning: #fbc02d;
+    --color-error: #e53835;
+    --color-success: #2e7d31;
 }
 
 .screen-max-width {
@@ -104,37 +104,50 @@ body {
 }
 
 .btn-primary {
-    @apply px-8 py-4 rounded-sm bg-primary text-white border-2 border-transparent hover:bg-shade1 active:bg-shade2 active:border-d-grey transition-all
+    @apply px-8 py-4 rounded-sm bg-primary text-white border-2 border-transparent hover:bg-shade1 active:bg-shade2 active:border-d-grey transition-all;
 }
 
 .btn-secondary {
-    @apply px-8 py-4 rounded-sm bg-white text-primary border-1 hover:bg-silver active:bg-silver active:border-2 active:border-light-grey transition-all
+    @apply px-8 py-4 rounded-sm bg-white text-primary border-1 hover:bg-silver active:bg-silver active:border-2 active:border-light-grey transition-all;
 }
 
 .login-btn {
-    @apply px-8 py-4 rounded-sm bg-transparent text-primary border-2 border-transparent hover:border-2 hover:border-light-grey active:bg-silver active:border-2 active:border-d-grey transition-all
+    @apply px-8 py-4 rounded-sm bg-transparent text-primary border-2 border-transparent hover:border-2 hover:border-light-grey active:bg-silver active:border-2 active:border-d-grey transition-all;
 }
 
 .marquee {
     overflow: clip;
+    width: 100%;
 }
 
 .fadeout-horizontal {
-    mask-image: linear-gradient(to right,
-            transparent,
-            white var(--fade-size, 5rem),
-            white calc(100% - var(--fade-size, 5rem)),
-            transparent);
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        white var(--fade-size, 2rem),
+        white calc(100% - var(--fade-size, 2rem)),
+        transparent
+    );
 }
 
 .marquee__content {
     display: flex;
     flex-shrink: 0;
-    padding-left: 9rem;
-    gap: 9rem;
+    padding-left: 2rem;
+    gap: 2rem;
     width: max-content;
-    animation: marquee 15s linear infinite;
+    animation: marquee 20s linear infinite;
+}
 
+@media (min-width: 768px) {
+    .marquee__content {
+        padding-left: 9rem;
+        gap: 9rem;
+    }
+
+    .fadeout-horizontal {
+        --fade-size: 5rem;
+    }
 }
 
 .marquee:hover .marquee__content {
@@ -151,12 +164,15 @@ body {
     background: white;
     box-shadow: 0px 2px 4px rgba(171, 190, 209, 0.2);
     border-radius: 8px;
-    transition: transform 0.7s ease, box-shadow 0.7s ease;
+    transition:
+        transform 0.7s ease,
+        box-shadow 0.7s ease;
 }
 
 .shadow-card:hover {
     transform: translate3d(10px, -5px, 0);
-    box-shadow: 0px 4px 8px rgba(171, 190, 209, 0.4),
+    box-shadow:
+        0px 4px 8px rgba(171, 190, 209, 0.4),
         0px 6px 12px rgba(171, 190, 209, 0.35);
 }
 

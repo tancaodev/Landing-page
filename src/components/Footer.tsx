@@ -4,9 +4,9 @@ import { useState } from 'react'
 
 const FooterColumn = ({ title, links }: { title: string; links: string[] }) => (
     <div>
-        <h4 className='text-headline-4 mb-6'>{title}</h4>
+        <h4 className='text-lg md:text-xl lg:text-headline-4 mb-4 md:mb-6'>{title}</h4>
         {links.map((link) => (
-            <p key={link} className='text-body-regular-3 text-silver mb-3'>
+            <p key={link} className='text-sm md:text-base lg:text-body-regular-3 text-silver mb-2 md:mb-3'>
                 {link}
             </p>
         ))}
@@ -27,12 +27,12 @@ const Footer = () => {
 
     return (
         <footer className='w-full bg-neutral-black'>
-            <div className='flex justify-between py-16 mx-36'>
-                <div className='flex flex-col gap-10'>
+            <div className='flex flex-col lg:flex-row justify-between py-8 md:py-12 lg:py-16 px-4 md:px-8 lg:mx-36 gap-8 md:gap-12 lg:gap-0'>
+                <div className='flex flex-col gap-6 md:gap-8 lg:gap-10'>
                     <div className='flex-shrink-0'>
-                        <img src={footerLogo} alt='Logo' />
+                        <img src={footerLogo} alt='Logo' className='w-32 md:w-40 lg:w-auto' />
                     </div>
-                    <div className='text-body-regular-2 text-silver'>
+                    <div className='text-sm md:text-base lg:text-body-regular-2 text-silver'>
                         <p>Copyright © 2020 Nexcent ltd.</p>
                         <p className='mt-2'>All rights reserved</p>
                     </div>
@@ -43,7 +43,8 @@ const Footer = () => {
                         <YoutubeIcon />
                     </div>
                 </div>
-                <div className='flex justify-between gap-8 text-white'>
+
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between gap-8 text-white'>
                     <FooterColumn
                         title='Company'
                         links={['About us', 'Blog', 'Contact us', 'Pricing', 'Testimonials']}
@@ -53,14 +54,14 @@ const Footer = () => {
                         links={['Help center', 'Terms of service', 'Legal', 'Privacy policy', 'Status']}
                     />
 
-                    <div>
-                        <h4 className='text-headline-4 mb-6'>Stay up to date</h4>
+                    <div className='md:col-span-2 lg:col-span-1'>
+                        <h4 className='text-lg md:text-xl lg:text-headline-4 mb-4 md:mb-6'>Stay up to date</h4>
 
                         <form onSubmit={handleSubmit} className='relative w-full'>
                             <input
                                 type='email'
                                 placeholder='Your email address'
-                                className='w-full bg-white/20 text-[#D9DBE1] text-body-regular-3 rounded-[8px] py-2 px-3 pr-10'
+                                className='w-full bg-white/20 text-[#D9DBE1] text-sm md:text-base lg:text-body-regular-3 rounded-[8px] py-2 px-3 pr-10'
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />

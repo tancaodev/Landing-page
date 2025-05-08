@@ -9,17 +9,21 @@ interface AssociateCardProps {
 
 const CardAssociate: React.FC<AssociateCardProps> = ({ data }) => {
     return (
-        <div className='mx-8 my-6 max-w-[300px] shadow-card'>
-            <div className='flex flex-col text-center items-center mx-4'>
-                <img src={data.img} alt={`Associate ${data.id}`} width={64} height={56} />
-                <h1
-                    className={`text-headline-3 text-d-grey line-clamp-2 font-bold mt-4 ${data.id === 3 ? 'mx-[18px]' : ''}`}
-                >
+        <div className='w-full md:max-w-[300px] mx-auto md:mx-8 my-4 md:my-6 shadow-card rounded-lg'>
+            <div className='flex flex-col text-center items-center p-4 md:p-6'>
+                <img
+                    src={data.img}
+                    alt={`Associate ${data.id}`}
+                    width={64}
+                    height={56}
+                    className='w-12 h-12 md:w-16 md:h-14 lg:w-[64px] lg:h-[56px]'
+                />
+                <h1 className='text-lg md:text-xl lg:text-headline-3 text-d-grey line-clamp-2 font-bold mt-3 md:mt-4'>
                     {data.title}
                 </h1>
             </div>
-            <div className="mt-2">
-                <p className='text-body-regular-3 text-grey text-center'>{data.description}</p>
+            <div className='px-4 md:px-6 pb-4 md:pb-6'>
+                <p className='text-sm md:text-base lg:text-body-regular-3 text-grey text-center'>{data.description}</p>
             </div>
         </div>
     )
