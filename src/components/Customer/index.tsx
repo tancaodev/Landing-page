@@ -6,13 +6,14 @@ const CustomerSection = () => {
     return (
         <div className='w-full bg-silver mt-12'>
             <div className='flex flex-col lg:flex-row items-center py-8 px-4 md:px-8 lg:mx-36 gap-8 lg:gap-[78px]'>
-                <div className='block w-full lg:min-w-fit'>
+                <div className='block w-full lg:w-[326px] aspect-square'>
                     <img
                         src={userImage}
                         alt='User image'
                         width={326}
                         height={326}
-                        className='w-full max-w-[326px] mx-auto lg:mx-0 object-contain'
+                        className='w-full h-full object-cover'
+                        loading="eager"
                     />
                 </div>
 
@@ -34,10 +35,19 @@ const CustomerSection = () => {
                         </p>
                     </div>
 
-                    <div className='flex flex-col lg:flex-row mt-8 gap-8'>
+                    <div className='flex flex-col xl:flex-row mt-8 gap-8'>
                         <div className='grid grid-cols-3 md:grid-cols-6 gap-4 lg:gap-10'>
                             {clients.logos.slice(0, 6).map((img, index) => (
-                                <img key={index} src={img} alt={`Client ${index}`} className='w-full h-auto' />
+                                <div key={index} className="aspect-square w-[48px]">
+                                    <img
+                                        src={img}
+                                        alt={`Client ${index}`}
+                                        width={48}
+                                        height={48}
+                                        className='w-full h-full object-contain'
+                                        loading="eager"
+                                    />
+                                </div>
                             ))}
                         </div>
 

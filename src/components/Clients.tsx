@@ -17,7 +17,7 @@ const Clients = () => {
                             <img
                                 src={img || pageLogo}
                                 alt={`Client ${(index % clients.logos.length) + 1}`}
-                                className='w-20 h-auto object-contain'
+                                className='h-auto object-contain'
                             />
                         </div>
                     ))}

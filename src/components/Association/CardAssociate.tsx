@@ -9,7 +9,7 @@ interface AssociateCardProps {
 
 const CardAssociate: React.FC<AssociateCardProps> = ({ data }) => {
     return (
-        <div className='w-full md:max-w-[300px] mx-auto md:mx-8 my-4 md:my-6 shadow-card rounded-lg'>
+        <div className='w-full min-[90rem]:max-w-[300px] mx-auto md:mx-8 my-4 md:my-6 shadow-card rounded-lg'>
             <div className='flex flex-col text-center items-center p-4 md:p-6'>
                 <img
                     src={data.img}
